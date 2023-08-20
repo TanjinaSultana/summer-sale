@@ -34,13 +34,13 @@
       </style>
 </head>
 <body class="font-Work-sans">
-    <header class="mb-0">
-        <div class="hero h-screen bg-[#F9F6E2]">
-            <div class="hero-content flex-col lg:flex-row-reverse ">
-              <img src="images/Summer 1.png" class="w-[500px] h-[500px] rounded-lg " />
-              <div class="p-16">
-                <h4 class="text-2xl text-center font-medium">---SALE FEVER---</h4>
-                <h1 class="text-5xl font-bold">Purchase TK 200 or<br> above & get <span class="text-[#E527B2]">20% off</span></h1>
+    <header class="mb-24 ">
+        <div class="hero mx-auto lg:mx-0 h-screen bg-[#F9F6E2]">
+            <div class="hero-content flex flex-col lg:flex-row-reverse ">
+              <img src="images/Summer 1.png" class=" w-[200px] h-[200px]   lg:w-[500px] lg:h-[500px] rounded-lg " />
+              <div class=" p-10 lg:p-16">
+                <h4 class="text-xl text-center font-medium mb-4 lg:text-2xl">---SALE FEVER---</h4>
+                <h1 class="text-2xl font-bold lg:text-5xl ml-8 lg:ml-0">Purchase TK 200 or<br> above & get <span class="text-[#E527B2]">20% off</span></h1>
                 <div class="flex m-8 gap-7">
                     <p class="mt-4 text-xl">Use Promo Code</p>
                 <button class="btn  bg-[#E527B2] border-0 text-white">SELL200</button>
@@ -49,13 +49,13 @@
             </div>
           </div>
     </header>
-    <main class="-mt-10 bg-[#F8F8F8]">
+    <main class=" bg-[#F8F8F8]">
       
-        <div class="flex flex-col lg:flex-row">
+        <div class="flex flex-col lg:flex-row  md:flex-col-2">
             <div>
                 <section class=" mx-10">
                     <h1 class="text-3xl font-bold mt-10 py-6">Kicthenware</h1>
-                   <div class="flex gap-4 ">
+                   <div class="flex gap-4 flex-col lg:flex-row ">
                     <div class="card w-80 bg-base-100 shadow-xl" onclick="handleClick(this)">
                         <figure class="mx-6 my-10 p-6 rounded-lg bg-[#11111180]">
                           <img src="images/prod1.png" alt="Shoes" class=" " />
@@ -111,7 +111,7 @@
                 </section>
                 <section class="m-10">
                     <h1 class="text-3xl font-bold mb-8">Sportsware</h1>
-                   <div class="flex gap-4 ">
+                   <div class="flex gap-4 flex-col lg:flex-row">
                     <div class="card w-80 bg-base-100 shadow-xl" onclick="handleClick(this)">
                         <figure class="mx-6 my-10 p-6 rounded-lg bg-[#11111180]">
                           <img src="images/prod6.png" alt="Shoes" class=" " />
@@ -167,7 +167,7 @@
                 </section>
                 <section class="m-10">
                     <h1 class="text-3xl font-bold mb-8">Sportsware</h1>
-                   <div class="flex gap-4 ">
+                   <div class="flex gap-4 flex-col lg:flex-row">
                     <div class="card w-80 bg-base-100 shadow-xl" onclick="handleClick(this)">
                         <figure class="mx-6 my-10 p-6 rounded-lg bg-[#11111180]">
                           <img src="images/prod7.png" alt="Shoes" class=" " />
@@ -222,7 +222,7 @@
                    </div>
                 </section>
             </div>
-            <div class=" mt-24  ">
+            <div class=" mt-24 mx-auto lg:mx-0 ">
                 <div class="card w-80 bg-base-100 shadow-xl">
                     <div class="card-body">
                       <h2 class="card-title font-extrabold">Have Coupon ?</h2>
@@ -233,9 +233,10 @@
                       
                     </div>
                   </div>
-                  <div class="card w-80 bg-base-100 shadow-xl mt-16">
+                  <div class="card w-80 bg-base-100 shadow-xl mt-8">
                     <div class="card-body items-center text-center">
-                       <div id="selectContainer">
+                       <div id="selectContainer" class="text-xl font-bold ">
+                       
                         
                        </div>
                         <hr class=" w-60">
@@ -243,12 +244,21 @@
                       <p class="font-extrabold" >Total Price : <span class="text-[#11111180]" id="totalPrice">00.00 </span><span class="text-[#11111180]">Tk</span> </p>
                       <p class="font-extrabold">Discount : <span class="text-[#11111180]" id="discountPrice">00.00</span> <span class="text-[#11111180]">Tk</span></p>
                       <p class="font-extrabold">Total : <span class="text-[#11111180]" id="total">00.00 </span><span class="text-[#11111180]">Tk</span> </p>
-                      <div class="card-actions">
-                        <button class="btn bg-[#E527B2] border-0 text-white w-60" id="purchaseBtn" disabled>Make Purchase</button>
-    
-                       <!-- The button to open modal -->
-<button class="btn bg-[#E527B2] border-0 text-white w-60" id="purchaseBtn" disabled>Make Purchase</button>
-<!-- Put this part before </body> tag -->
+                      <hr class=" w-60">
+                      <div class="card-actions mt-2">
+
+<button class="btn bg-[#E527B2] border-0 text-white w-60" onclick="my_modal_1.showModal()" id="purchaseBtn" disabled>Make Purchase</button>
+<dialog id="my_modal_1" class="modal">
+  <form method="dialog" class="modal-box">
+    <img src="images/congo.png" class="mx-auto">
+    <h3 class="font-bold text-lg font-bold">CONGRATULATIONS!</h3>
+    <p class="py-2 text-[#11111180]">Your Purchase the product</p>
+    <div class="modal-action">
+      <!-- if there is a button in form, it will close the modal -->
+      <button class="btn mx-auto bg-[#E527B2] text-white" onclick="window.location.reload(true)">Go Home</button>
+    </div>
+  </form>
+</dialog>
 
                     
                     </div>
